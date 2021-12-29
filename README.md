@@ -9,7 +9,7 @@ mkdir local-dbs
 #### Pull postgres image and run a docker container with it
 ```bash
 docker pull postgres
-docker run -d --name dev-postgres -e POSTGRES_PASSWORD=Silico2021! -v ${HOME}/local-dbs/:/var/lib/postgresql/data -p 5432:5432 postgres
+docker run -d --name dev-postgres -e POSTGRES_PASSWORD=<your_pwd> -v ${HOME}/local-dbs/:/var/lib/postgresql/data -p 5432:5432 postgres
 ```
 
 After this, you may need to update permissions on this directory. Simply run `sudo chmod +x ${HOME}/local-dbs`.
@@ -53,7 +53,7 @@ You can do this in `/alembic/schema/db_models.py`. Once you make sure everything
 poetry run python /alembic/schema/db_models.py
 ```
 
-This will create the DB declared. Finally, you can populate your DB by going to `localpg/` and running
+This will create the tables declared. Finally, you can populate your DB by going to `localpg/` and running
 
 ```bash
 poetry run python main.py
