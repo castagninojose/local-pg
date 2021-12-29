@@ -42,6 +42,8 @@ Once the installation is complete, you'll need to create the table you want your
 For this, you'll need to declare a couple of things. First, the credentials and connection info
 are at `.env` and `cfg.py` respectively. 
 
+:warning: The .env file contains credentials and sensitive information so this is never pushed remotely. See `sample_dot_env` file to get an idea of the things you need to define.
+
 On the other hand, you'll have to declare both your table's name and the schema (columns you want it to have). 
 You can do this in `/alembic/schema/db_models.py`. Once you make sure everything is set, go to `local-pg/localpg` and run
 
