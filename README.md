@@ -44,7 +44,9 @@ are at `.env` and `cfg.py` respectively.
 
 :warning: The .env file contains credentials and sensitive information so this is never pushed remotely. See `sample_dot_env` file to get an idea of the things you need to define.
 
-On the other hand, you'll have to declare both your table's name and the schema (columns you want it to have). 
+You'll need to find the address of the host, which can be found by running `docker inspect <id> -f "{{json .NetworkSettings.Networks }}"`
+
+Second, you'll have to declare both your table's name and the schema (columns you want it to have). 
 You can do this in `/alembic/schema/db_models.py`. Once you make sure everything is set, go to `local-pg/localpg` and run
 
 ```bash
@@ -56,4 +58,5 @@ This will create the DB declared. Finally, you can populate your DB by going to 
 ```bash
 poetry run python main.py
 ```
+Check out `main.py` file to make it fit your needs. In there you'll have to write a function that prepares the dataframe you want to insert.
 
