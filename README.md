@@ -26,6 +26,7 @@ Now you'll be in the command line of that container. There, you can create a DB 
 psql -U postgres
 root@05b3a3471f6f:/# psql -U postgres
 postgres-# CREATE DATABASE test-db;
+postgres-# GRANT ALL PRIVILEGES ON DATABASE test-db TO $POSTGRES_USER;
 postgres-# \q
 ```
 
